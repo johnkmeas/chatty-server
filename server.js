@@ -26,7 +26,7 @@ function broadcast(data) {
     if (client.readyState === WebSocket.OPEN) {
 
       if(data.type === "postNotification"){
-        data.type = "incomingNotification"
+        data.type = "incomingNotification";
       }
       if(data.type === "postMessage"){
         data.type = "incomingMessage";
@@ -43,10 +43,10 @@ wss.on('connection', (ws) => {
 
   console.log('Client connected', userCount);
 
-  const COLORS = ["red", "tomato", "blue", "green", "black"]
+  const COLORS = ["red", "tomato", "blue", "green", "black"];
 
   function getRandomColor() {
-    return COLORS[Math.floor(Math.random()*COLORS.length)]
+    return COLORS[Math.floor(Math.random() * COLORS.length)];
   }
   const color = getRandomColor();
 
