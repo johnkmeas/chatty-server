@@ -43,7 +43,11 @@ wss.on('connection', (ws) => {
 
   console.log('Client connected', userCount);
 
-  const COLORS = ["red", "tomato", "blue", "green", "black"];
+  const COLORS = [
+    "red", "maroon", "blue", "green",
+    "lime", "aqua", "", "cornflowerblue",
+    "darkcyan", "deeppink", "lightseagreen", "royalblue"
+    ];
 
   function getRandomColor() {
     return COLORS[Math.floor(Math.random() * COLORS.length)];
@@ -51,7 +55,7 @@ wss.on('connection', (ws) => {
   const color = getRandomColor();
 
   broadcast({type: "counter", countLogin: socketCount});
-  ws.send(JSON.stringify({type: "change_color", color: color}));
+  ws.send(JSON.stringify({ type: "change_color", color: color }));
 
   ws.on('message', function incoming(message){
     const messageJson = JSON.parse(message);
