@@ -44,9 +44,9 @@ wss.on('connection', (ws) => {
   console.log('Client connected', userCount);
 
   const COLORS = [
-    "red", "maroon", "blue", "green",
-    "lime", "aqua", "", "cornflowerblue",
-    "darkcyan", "deeppink", "lightseagreen", "royalblue"
+    "#1b3b58", "#1b3b58", "#509ab6", "#509ab6",
+    "#016fd8", "#4493de", "", "#9ed0ed",
+    "darkcyan", "deeppink", "orange", "lightseagreen"
     ];
 
   function getRandomColor() {
